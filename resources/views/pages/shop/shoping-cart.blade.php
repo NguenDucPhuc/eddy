@@ -44,7 +44,7 @@
 								<td class="column-1">
 									<a href="{{route('delete',$cc['id'])}}">
 										<div class="how-itemcart1">
-											<img src="{{url('../')}}/uploads/product/{{$cc['image']}}" alt="IMG">
+											<img src="{{url('../')}}/images/product/{{$cc['image']}}" alt="IMG">
 										</div>
 									</a>
 								</td>

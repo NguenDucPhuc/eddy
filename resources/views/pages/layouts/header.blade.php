@@ -194,7 +194,7 @@
 					<li class="header-cart-item flex-w flex-t m-b-12">						
 						<a href="{{route('delete',$cc['id'])}}">
 							<div class="header-cart-item-img">
-								<img src="{{url('../')}}/uploads/product/{{$cc['image']}}" alt="IMG">
+								<img src="{{url('../')}}/images/product/{{$cc['image']}}" alt="IMG">
 							</div>
 						</a>
 						<div class="header-cart-item-txt p-t-8">
@@ -203,7 +203,7 @@
 							</a>
 
 							<span class="header-cart-item-info">
-								{{$cc['quantity']}} x {{$cc['price']}}
+								{{$cc['quantity']}} x {{number_format($cc['price'])}}
 							</span>
 						</div>
 					</li>
@@ -212,7 +212,7 @@
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: {{$cart->total_price}}
+						Total: {{number_format($cart->total_price)}}
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">

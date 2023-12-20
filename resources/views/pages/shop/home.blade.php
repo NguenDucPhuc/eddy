@@ -36,7 +36,7 @@
 				<!-- Block2 -->
 				<div class="block2">
 					<div class="block2-pic hov-img0">
-						<img src="{{url('../')}}/uploads/product/{{$pr->image}}" alt="IMG-PRODUCT">
+						<img src="{{asset('/images/product/'.$pr->image)}}" alt="IMG-PRODUCT">
 						<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1 btn-show" data-url="{{route('getinfo',$pr->id)}}">
 							Quick View
 						</a>
@@ -93,9 +93,9 @@
 				success: function(response) {
 					console.log(response);
 					$("#name-pr").text(response.name);
-					$("#img-pr1").attr("data-thumb","{{url('../')}}/uploads/product/"+response.image);
-					$("#img-pr2").attr("src","{{url('../')}}/uploads/product/"+response.image);
-					$("#img-pr3").attr("href","{{url('../')}}/uploads/product/"+response.image);
+					$("#img-pr1").attr("data-thumb","{{url('../')}}/images/product/"+response.image);
+					$("#img-pr2").attr("src","{{url('../')}}/images/product/"+response.image);
+					$("#img-pr3").attr("href","{{url('../')}}/images/product/"+response.image);
 					$("#price-pr").text(response.price+" VND");
 					var sale_price= response.price-(response.sale_price*response.price/100);
 					$("#price-pr-sale").text(sale_price+" VND");

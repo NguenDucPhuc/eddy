@@ -45,7 +45,7 @@
 						</td>
 						<td> {{ $sl->title }} </td>
 						<td> {{ $sl->name }} </td>
-						<td> <img id='img-upload' src="{{url('.././uploads')}}/slide/{{$sl->image}}" width="100%"/> </td>
+						<td> <img id='img-upload' src="{{asset('images/slide/'.$sl->image)}}" width="100%"/> </td>
 						<td> 
 							@if($sl->status==1 )
 							{{"Hiện"}}

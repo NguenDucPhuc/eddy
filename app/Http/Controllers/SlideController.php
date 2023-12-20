@@ -28,7 +28,7 @@ class SlideController extends Controller
         $images="";
         if ($request->has('image')) {
             $images=$request->image;
-            $images->move(base_path('/uploads/slide/'),$images->getClientOriginalName());
+            $images->move(base_path('/public/images/slide/'),$images->getClientOriginalName());
             $images=$images->getClientOriginalName();
         }
         $Slide->title = $request->title;
@@ -52,7 +52,7 @@ class SlideController extends Controller
         $images=$Slide->image;
         if ($request->has('image')) {
             $images=$request->image;
-            $images->move(base_path('/uploads/slide/'),$images->getClientOriginalName());
+            $images->move(base_path('/public/images/slide/'),$images->getClientOriginalName());
             $images=$images->getClientOriginalName();
         }
         $Slide->title = $request->title;

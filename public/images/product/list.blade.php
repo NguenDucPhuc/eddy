@@ -7,13 +7,11 @@
 		<div class="clearfix">
 			<div class="pull-right tableTools-container"></div>
 		</div>
-		<div class="table-header row">
-			<div class="col-md-10">
-				Danh sách sản phẩm
-			</div>			
-			<div class="col-md-2">
-				<a class="btn btn-success radius" href="add" style="margin: 10px">
-					<i class="ace-icon fa fa-search-plus "> Thêm mới</i>
+		<div class="table-header">
+			Danh sách sản phẩm
+			<div class="add">
+				<a class="white" href="add">
+					<i class="ace-icon fa fa-search-plus bigger-130">  &nbsp;Thêm mới &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</i>
 				</a>
 			</div>
 			
@@ -31,9 +29,10 @@
 						</th>
 						<th>Tên Sản Phẩm</th>
 						<th>Ảnh</th>
-						<th>Mô tả</th>
 						<th>Danh mục sản phẩm</th>
 						<th>Giá</th>
+						<th>Size</th>
+						<th>Màu</th>
 						<th>Giảm Giá</th>
 						<th class="hidden-480">Trạng thái</th>
 						<th>Action</th>
@@ -51,11 +50,12 @@
 							</label>
 						</td>
 						<td> {{ $sp->name}}</td>
-						<td width="100px"> <img src="{{asset('images/product/'. $sp->image)}}" width="100%" alt="{{ $sp->Anh}}"></td>
-						<td width="400px">{{ $sp->description}}</td>
+						<td width="100px"> <img src="../../../uploads/product/{{ $sp->image}}" width="100%" alt="{{ $sp->Anh}}"></td>
 						<td> {{ $sp->category->name}}</td>
-						<td> {{ $sp->price}} VND</td>
-						<td> {{ $sp->sale_price}} %</td>
+						<td> {{ $sp->price}} 000 VND</td>
+						<td> {{ $sp->size}}</td>
+						<td> {{ $sp->color_id}}</td>
+						<td> {{ $sp->sale_of}} %</td>
 						<td id="status-{{$sp->id}}"> 
 							@if( $sp->status==1 )
 							{{"Hiện"}}
@@ -102,7 +102,7 @@
 					bAutoWidth: false,
 					"aoColumns": [
 					  { "bSortable": false },
-					  null, null,null,null, null,null,null,
+					  null, null,null,null, null,null,null,null,
 					  { "bSortable": false }
 					],
 					"aaSorting": [],

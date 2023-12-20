@@ -28,7 +28,7 @@ class ProductController extends Controller
         $images="";
         if ($request->has('images')) {
             $images=$request->images;
-            $images->move(base_path('/uploads/product/'),$images->getClientOriginalName());
+            $images->move(base_path('/public/images/product/'),$images->getClientOriginalName());
             $images=$images->getClientOriginalName();
         }
         $product->name = $request->name;
@@ -56,7 +56,7 @@ class ProductController extends Controller
         $images=$product->image;
         if ($request->has('images')) {
             $images=$request->images;
-            $images->move(base_path('/uploads/product/'),$images->getClientOriginalName());
+            $images->move(base_path('/public/images/product/'),$images->getClientOriginalName());
             $images=$images->getClientOriginalName();
         }
         $product->name = $request->name;

@@ -50,10 +50,48 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{$cart->total_quantity}}">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
+						<a data-toggle="dropdown" href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 dropdown-toggle">
+								<i class="ace-icon fa fa-user"></i>
+							</a>
+							@if(Auth()->user())
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								
+								<li>
+									<a href="{{route('admin.user.profile',Auth()->user()?ucfirst(Auth()->user()->id):'')}}">
+										<i class="ace-icon fa fa-user"></i>
+										Hồ sơ
+									</a>
+								</li>
 
-						{{-- <a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a> --}}
+								<li class="divider"></li>
+
+								<li>
+									<a href="{{url('admin/logout')}}">
+										<i class="ace-icon fa fa-power-off"></i>
+										Đăng xuất
+									</a>
+								</li>
+							</ul>
+							@else
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								
+								<li>
+									<a href="{{route('admin.login')}}">
+										<i class="ace-icon fa fa-user"></i>
+										Đăng nhập
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="{{url('admin/registration')}}">
+										<i class="ace-icon fa fa-power-off"></i>
+										Đăng ký
+									</a>
+								</li>
+							</ul>
+							@endif
 					</div>
 				</nav>
 			</div>	

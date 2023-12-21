@@ -24,7 +24,7 @@ class HomeController extends Controller
 
     function index()
     {
-        $product = Product::where('status','1')->limit(8)->get();
+        $product = Product::where('status','1')->limit(15)->get();
         $slide=Slide::where('status','1')->get();
         return view('pages.shop.home',compact('product','slide'));
 

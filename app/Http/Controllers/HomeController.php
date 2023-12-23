@@ -107,10 +107,10 @@ public function postcheckout(CartHelper $cart,Request $req)
     $email=[
     
         $data['email'],
-        'quandang1508@gmail.com'
+        'nguyenducphuc_t65@hus.edu.vn'
     ];
     Mail::send('viewmail', $data, function ($message) use ($data,$email) {
-        $message->from('buiquyen303@gmail.com');
+        $message->from('nguyenducphuc_t65@hus.edu.vn');
         
         $message->to($email, 'viewmail');
         
